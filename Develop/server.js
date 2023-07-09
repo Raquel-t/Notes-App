@@ -11,19 +11,14 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 
-// HTML ROUTE
-app.get('/note', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/notes.html'));
-});
+const getNotes = () => {
+    const data = fs.readFileSync(path.join(__dirname, 'db', 'db.json'));
+    return JSON.parse(data);
+};
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
-});
-
-// wildcard
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
-});
+const saveNotes = (notes) => {
+    fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify(notes));
+};
 
 // API Routes
 app.get('/api/notes', (req, res) => {
@@ -53,17 +48,22 @@ app.delete('/api/notes/:id', (req, res) => {
     res.sendStatus(204);
 });
 
-const getNotes = () => {
-    const data = fs.readFileSync(path.join(__dirname, 'db', 'db.json'));
-    return JSON.parse(data);
-};
+// HTML ROUTE
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/notes.html'));
+});
 
-const saveNotes = (notes) => {
-    fs.writeFileSync(path.join(__dirname, 'db', 'db.json'), JSON.stringify(notes));
-};
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
+// wildcard
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
 
 // start server
 app.listen(PORT, () => {
-    console.log('App listening at http://localhost:${PORT} 🚀');
+    console.log(`App listening at http://localhost:${PORT} 🚀`);
 });
 
