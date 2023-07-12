@@ -33,19 +33,19 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ## Table of Contents
 
 * [Description](#description)
-* [Usage](#usage)
 * [Deployed-URL](#deployed-url)
-* [Credits](#credits)
 * [License](#license)
 * [Questions](#questions)
 * [Resources](#resources)
 
 
-## Usage
 
 ## Mock-Up
+![Demo](<public/assets/demo/Note Taker.gif>)
 
 ## Deployed-URL
+
+https://note-star-0fe390a57bff.herokuapp.com
 
 ## License
 
@@ -56,6 +56,7 @@ This application is covered under the [MIT License](https://github.com/Raquel-t/
 * ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 * ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 * ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)
+* ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
 
 ## Questions
 
@@ -68,5 +69,6 @@ For any questions, please contact me at the following links:
 
 
 ## Resources
-
-## Credits
+* [NPM UUID](https://www.npmjs.com/package/uuid)
+* [Node.js Documentation](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
+* [Stack Overflow Heroku + node.js error](https://stackoverflow.com/questions/15693192/heroku-node-js-error-web-process-failed-to-bind-to-port-within-60-seconds-of)
